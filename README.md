@@ -156,8 +156,8 @@ LCD 背板 4 Pin：
 - GPIO 17 在程式內設為 **pull-up**：
   - 放開：讀值 HIGH
   - 按下：接 GND → 讀值 LOW
-<img width="592" height="383" alt="image" src="https://github.com/user-attachments/assets/7b3191e5-d8ef-444e-9720-dfbedba5d49f" />
- 
+<img width="490" height="432" alt="image" src="https://github.com/user-attachments/assets/2b27c67a-04b1-4aa3-b5ab-3ea59572c5f4" />
+
 ![S__17793052_0](https://github.com/user-attachments/assets/070c9492-8d59-4d58-a5cd-5ecd91d7bd2d)
 ![S__17793053_0](https://github.com/user-attachments/assets/ffdc2f28-8cf1-4b34-86e5-de03544ab5da)
 ![S__17793048_0](https://github.com/user-attachments/assets/34212eaa-fd35-403d-bf15-ef229bdb0195)
