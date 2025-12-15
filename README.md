@@ -518,9 +518,9 @@ def servo_tick():
         set_servo_angle(servo_current_angle)
         return
 
-# =========================
+"""
 # MCP3008 / IR 讀取
-# =========================
+"""
 def _setup_spi():
     try:
         spi_dev = spidev.SpiDev()
@@ -540,3 +540,6 @@ def read_adc_channel(ch: int) -> int:
 def read_ir_voltage() -> float:
     raw = read_adc_channel(MCP3008_CHANNEL)
     return raw * 3.3 / 1023.0
+
+
+    
