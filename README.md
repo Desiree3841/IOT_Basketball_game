@@ -88,6 +88,7 @@ Raspberry Pi 版操作與組裝 SOP（Markdown）
 | GND  | GND 軌       |
 | Vo   | MCP3008 CH0  |
 
+
 **MCP3008 腳位**
 <img width="216" height="163" alt="image" src="https://github.com/user-attachments/assets/a4ec5d31-97f0-497d-87b7-b462fba39524" />
 
@@ -106,6 +107,7 @@ Raspberry Pi 版操作與組裝 SOP（Markdown）
 ---
 
 ### 3.3 20×4 I2C LCD
+<img width="231" height="211" alt="image" src="https://github.com/user-attachments/assets/ab5453dd-440a-4baa-bb3f-4f2b5ee7cd54" />
 
 LCD 背板 4 Pin：
 
@@ -119,6 +121,8 @@ LCD 背板 4 Pin：
 ---
 
 ### 3.4 SG90 伺服馬達（籃框）
+<img width="657" height="418" alt="image" src="https://github.com/user-attachments/assets/2418ec3f-ab44-48ce-a2f8-78e838519c96" />
+
 
 | SG90 線色 | 功能   | 接到                 |
 |-----------|--------|----------------------|
