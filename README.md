@@ -1,6 +1,7 @@
 # 動感投籃機（Basketball Shooting Game）  
 Raspberry Pi 版操作與組裝 SOP（Markdown）
 ---
+![S__17793064_0](https://github.com/user-attachments/assets/ef8e1a1a-38a1-45e2-8934-6938c7c43f4f)
 
 ## 一、系統目標與整體說明
 
@@ -251,6 +252,8 @@ LCD 背板 4 Pin：
    - 蜂鳴器：
      - 3、2、1：短嗶。
      - GO!：長嗶。
+![S__17793070_0](https://github.com/user-attachments/assets/e37ece86-c04e-4b8f-9f2b-9d2cf2435f18)
+![S__17793074_0](https://github.com/user-attachments/assets/65fcaf60-a7f6-4061-a2f2-6c42226da4da)
 
 2. **Playing 階段**
    - 持續時間：預設 30 秒（可由 Web 調整）。
@@ -335,6 +338,10 @@ LCD 背板 4 Pin：
 - 靜音狀態：`ON / OFF`
 - 每場秒數（GAME_TIME）
 - 最近 10 個 Round 的紀錄與歷史最高分（由 `score_history.json` 讀取）
+![S__17793071_0](https://github.com/user-attachments/assets/01a5c0a3-bf55-41b3-8f68-7ce072af3d92)
+![S__17793058_0](https://github.com/user-attachments/assets/bb39d47c-45ad-454d-a459-64a5e2c9a390)
+![S__17793060_0](https://github.com/user-attachments/assets/bb50b5e8-70f2-4307-a515-5aa251d029ff)
+![S__17793059_0](https://github.com/user-attachments/assets/493fffae-63cc-4911-97b2-ffa9870236bb)
 
 ### 8.2 控制項
 
