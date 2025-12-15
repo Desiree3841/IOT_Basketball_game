@@ -1,0 +1,668 @@
+[
+  {
+    "round_id": 1,
+    "start_time": "2025-12-11T23:21:26",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 8,
+    "game2_score": 9,
+    "round_total_score": 17
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-11T23:22:17",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 8,
+    "game2_score": 9,
+    "round_total_score": 17
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-11T23:23:15",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 8,
+    "game2_score": 9,
+    "round_total_score": 17
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-11T23:49:56",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 8,
+    "game2_score": 9,
+    "round_total_score": 17
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-11T23:53:29",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-11T23:56:00",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-13T21:57:15",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-13T22:32:33",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-13T22:57:33",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-13T22:59:30",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-13T23:03:01",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-13T23:11:53",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T09:12:57",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T09:25:53",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T10:33:31",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T10:46:53",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T10:51:00",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T11:01:01",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T11:02:28",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T11:03:56",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T11:12:43",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T11:14:00",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 1,
+    "game2_score": 1,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T12:47:35",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 3,
+    "game2_score": 8,
+    "round_total_score": 11
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T12:49:31",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 5,
+    "game2_score": 9,
+    "round_total_score": 14
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T12:52:14",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 7,
+    "game2_score": 4,
+    "round_total_score": 11
+  },
+  {
+    "round_id": 4,
+    "start_time": "2025-12-14T12:54:04",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 2,
+    "game2_score": 4,
+    "round_total_score": 6
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T14:58:13",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 4,
+    "game2_score": 0,
+    "round_total_score": 4
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T15:39:38",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 0,
+    "game2_score": 3,
+    "round_total_score": 3
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T15:40:42",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 5,
+    "game2_score": 6,
+    "round_total_score": 11
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T15:42:02",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 4,
+    "game2_score": 0,
+    "round_total_score": 4
+  },
+  {
+    "round_id": 4,
+    "start_time": "2025-12-14T15:43:21",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 5,
+    "start_time": "2025-12-14T15:45:10",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 3,
+    "game2_score": 1,
+    "round_total_score": 4
+  },
+  {
+    "round_id": 7,
+    "start_time": "2025-12-14T15:46:36",
+    "game1_mode": 1,
+    "game2_mode": 3,
+    "game1_score": 1,
+    "game2_score": 0,
+    "round_total_score": 1
+  },
+  {
+    "round_id": 8,
+    "start_time": "2025-12-14T15:49:08",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 9,
+    "start_time": "2025-12-14T15:53:04",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 6,
+    "game2_score": 5,
+    "round_total_score": 11
+  },
+  {
+    "round_id": 10,
+    "start_time": "2025-12-14T15:56:22",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 6,
+    "game2_score": 9,
+    "round_total_score": 15
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T16:20:28",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T16:56:36",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 4,
+    "game2_score": 8,
+    "round_total_score": 12
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T17:05:07",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 6,
+    "game2_score": 6,
+    "round_total_score": 12
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T17:24:47",
+    "game1_mode": 1,
+    "game2_mode": 3,
+    "game1_score": 17,
+    "game2_score": 3,
+    "round_total_score": 20
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T18:18:59",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T18:21:18",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 5,
+    "game2_score": 0,
+    "round_total_score": 5
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T18:31:18",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 1,
+    "game2_score": 10,
+    "round_total_score": 11
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T18:32:37",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T18:41:01",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 4,
+    "start_time": "2025-12-14T18:43:25",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 1,
+    "game2_score": 10,
+    "round_total_score": 11
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T18:50:37",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 4,
+    "round_total_score": 4
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T18:52:12",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 5,
+    "game2_score": 2,
+    "round_total_score": 7
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T18:54:59",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 4,
+    "game2_score": 0,
+    "round_total_score": 4
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T18:56:23",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T19:01:45",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T19:03:06",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 9,
+    "round_total_score": 9
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T19:04:43",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 5,
+    "game2_score": 14,
+    "round_total_score": 19
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T19:06:52",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 5,
+    "game2_score": 7,
+    "round_total_score": 12
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T19:14:06",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 11,
+    "game2_score": 8,
+    "round_total_score": 19
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T19:23:34",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 8,
+    "round_total_score": 8
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T19:25:08",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 13,
+    "game2_score": 13,
+    "round_total_score": 26
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T20:10:25",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 4,
+    "game2_score": 11,
+    "round_total_score": 15
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T20:12:43",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 4,
+    "game2_score": 0,
+    "round_total_score": 4
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T20:14:13",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T20:15:39",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 3,
+    "game2_score": 0,
+    "round_total_score": 3
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T20:36:57",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 3,
+    "game2_score": 5,
+    "round_total_score": 8
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T20:53:19",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T20:56:28",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T20:59:10",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 3,
+    "game2_score": 0,
+    "round_total_score": 3
+  },
+  {
+    "round_id": 4,
+    "start_time": "2025-12-14T21:03:28",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 1,
+    "game2_score": 2,
+    "round_total_score": 3
+  },
+  {
+    "round_id": 6,
+    "start_time": "2025-12-14T21:05:26",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 5,
+    "game2_score": 3,
+    "round_total_score": 8
+  },
+  {
+    "round_id": 9,
+    "start_time": "2025-12-14T21:08:29",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 6,
+    "game2_score": 0,
+    "round_total_score": 6
+  },
+  {
+    "round_id": 10,
+    "start_time": "2025-12-14T21:10:17",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 6,
+    "game2_score": 0,
+    "round_total_score": 6
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T21:31:54",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 0,
+    "game2_score": 2,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 3,
+    "start_time": "2025-12-14T21:33:30",
+    "game1_mode": 1,
+    "game2_mode": 2,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T22:21:34",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 2,
+    "game2_score": 0,
+    "round_total_score": 2
+  },
+  {
+    "round_id": 1,
+    "start_time": "2025-12-14T22:50:06",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 0,
+    "round_total_score": 0
+  },
+  {
+    "round_id": 2,
+    "start_time": "2025-12-14T22:51:33",
+    "game1_mode": 2,
+    "game2_mode": 3,
+    "game1_score": 0,
+    "game2_score": 1,
+    "round_total_score": 1
+  }
+]

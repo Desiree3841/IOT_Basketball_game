@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>投籃機控制台 - Dashboard</title>
+
+  <!-- 也加一層 HTML meta 防快取 -->
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <style>
+    body {
+      background: #0b0f14;
+      color: #e6f1ff;
+      font-family: "Segoe UI", sans-serif;
+      padding: 18px;
+      margin: 0;
+    }
+    h1 {
+      margin: 10px 0 18px;
+      text-align: center;
+      color: #00eaff;
+      font-size: 34px;
+      text-shadow: 0 0 12px rgba(0,234,255,0.55);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #151a22, #10141b);
+      border: 1px solid rgba(0,234,255,0.18);
+      border-radius: 14px;
+      box-shadow: 0 0 18px rgba(0,234,255,0.12);
+      padding: 16px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 18px;
+    }
+
+    .badge {
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    #state {
+      color: #ff4d6d;
+      text-shadow: 0 0 10px rgba(255,77,109,0.35);
+    }
+    #state.running {
+      color: #44ff44;
+      text-shadow: 0 0 12px rgba(68,255,68,0.35);
+    }
+
+    .big {
+      font-size: 44px;
+      font-weight: 800;
+      color: #00ff88;
+      text-shadow: 0 0 14px rgba(0,255,136,0.35);
+      text-align: center;
+      margin: 8px 0 0;
+    }
+    .sub {
+      text-align: center;
+      opacity: 0.9;
+      margin-top: 6px;
+    }
+
+    .btn {
+      background: #151a22;
+      border: 2px solid #00eaff;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 16px;
+      color: #00eaff;
+      cursor: pointer;
+      transition: 0.18s;
+      margin: 6px 6px 0 0;
+    }
+    .btn:hover { background: #00eaff; color: #051018; }
+    .btn-green { border-color: #44ff44; color: #44ff44; }
+    .btn-green:hover { background:#44ff44; color:#06130a; }
+    .btn-red { border-color: #ff4d6d; color: #ff4d6d; }
+    .btn-red:hover { background:#ff4d6d; color:#18060a; }
+    .btn-yellow { border-color:#ffdd44; color:#ffdd44; }
+    .btn-yellow:hover { background:#ffdd44; color:#131004; }
+
+    select, input[type="number"] {
+      background: #0f141b;
+      color: #e6f1ff;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 15px;
+      outline: none;
+      width: 160px;
+    }
+
+    .hint {
+      font-size: 13px;
+      opacity: 0.78;
+      margin-top: 8px;
+    }
+
+    .history-card {
+      max-width: 980px;
+      margin: 16px auto 0;
+    }
+    .best {
+      font-size: 22px;
+      font-weight: 800;
+      color: gold;
+      text-shadow: 0 0 12px rgba(255,215,0,0.35);
+      margin: 0 0 10px;
+    }
+    .history-list {
+      text-align: left;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+    .history-item {
+      padding: 6px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 8px;
+    }
+
+    /* 開始前倒數 Overlay */
+    #pre_countdown_overlay {
+      position: fixed;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.82);
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    #pre_countdown_number {
+      font-size: 140px;
+      font-weight: 900;
+      text-shadow: 0 0 30px rgba(0,255,136,0.55);
+      transition: transform 0.18s ease;
+    }
+  </style>
+
+  <script>
+    let suppressSyncUntil = 0;
+
+    function q(url) {
+      const ts = Date.now();
+      return url.includes("?") ? `${url}&ts=${ts}` : `${url}?ts=${ts}`;
+    }
+
+    function modeName(v){
+      if (v === 1) return "Mode1(固定90)";
+      if (v === 2) return "Mode2(45↔135)";
+      if (v === 3) return "Mode3(30↔150亂速)";
+      return `Mode${v}`;
+    }
+
+    function updateStatus() {
+      fetch(q("/status"))
+        .then(r => r.json())
+        .then(data => {
+          // state
+          const stateElem = document.getElementById("state");
+          const running = !!(data.running || data.pre_countdown_active);
+          stateElem.innerText = running ? "RUNNING" : "STOPPED";
+          if (running) stateElem.classList.add("running");
+          else stateElem.classList.remove("running");
+
+          // numbers（全部加上預設，避免 undefined）
+          document.getElementById("round").innerText       = data.round       ?? 0;
+          document.getElementById("game").innerText        = data.game        ?? 0;
+          document.getElementById("score").innerText       = data.score       ?? 0;
+          document.getElementById("round_total").innerText = data.round_total ?? 0;
+
+          document.getElementById("sound_mode").innerText = String(data.sound_mode || "beep").toUpperCase();
+          document.getElementById("mute_state").innerText = data.muted ? "ON" : "OFF";
+          document.getElementById("game_time").innerText  = data.game_time ?? 30;
+
+          // countdown
+          const cdVal = data.remaining_time ?? 0;
+          const cd = document.getElementById("countdown");
+          cd.innerText = cdVal;
+          cd.style.transform = "scale(1.2)";
+          setTimeout(() => cd.style.transform = "scale(1)", 160);
+
+          // settings sync
+          const now = Date.now();
+          const g1Sel = document.getElementById("game1_mode_select");
+          const g2Sel = document.getElementById("game2_mode_select");
+          const timeInput = document.getElementById("game_time_input");
+
+          const game1_mode = data.game1_mode ?? 1;
+          const game2_mode = data.game2_mode ?? 2;
+
+          document.getElementById("mode_preview").innerText =
+            `下一輪：Game1=${modeName(game1_mode)} / Game2=${modeName(game2_mode)}`;
+
+          if (now >= suppressSyncUntil) {
+            if (document.activeElement !== g1Sel)   g1Sel.value   = String(game1_mode);
+            if (document.activeElement !== g2Sel)   g2Sel.value   = String(game2_mode);
+            if (document.activeElement !== timeInput) timeInput.value = String(data.game_time ?? 30);
+          }
+
+          document.getElementById("settings_hint").innerText =
+            running
+              ? "⚠️ 模式/秒數/音效：已寫入並會在下一個 Round 生效（靜音例外）"
+              : "模式/秒數/音效：寫入設定檔，下一個 Round 生效（靜音立即）";
+
+          // history：顯示每場分數
+          const best = data.history_best ?? 0;
+          document.getElementById("best_score").innerText = best;
+
+          const list = document.getElementById("recent_list");
+          if (!data.history_recent || data.history_recent.length === 0) {
+            list.innerHTML = `<div class="history-item">目前無紀錄</div>`;
+          } else {
+            let html = "";
+            const items = data.history_recent.slice().reverse(); // 最新在上
+            items.forEach(h => {
+              const t    = (h.start_time || "").replace("T"," ");
+              const rid  = h.round_id           ?? "";
+              const ttot = h.round_total_score  ?? 0;
+              const g1m  = h.game1_mode         ?? "";
+              const g2m  = h.game2_mode         ?? "";
+              const g1s  = h.game1_score        ?? 0;
+              const g2s  = h.game2_score        ?? 0;
+
+              html += `<div class="history-item">` +
+                      `${t} | Round ${rid} | ` +
+                      `G1:${g1s} (M${g1m}) | ` +
+                      `G2:${g2s} (M${g2m}) | ` +
+                      `Total:${ttot}` +
+                      `</div>`;
+            });
+            list.innerHTML = html;
+          }
+
+          // overlay
+          const overlay = document.getElementById("pre_countdown_overlay");
+          const numElem = document.getElementById("pre_countdown_number");
+          if (data.pre_countdown_active) {
+            overlay.style.display = "flex";
+            if (data.pre_countdown_value > 0) numElem.innerText = data.pre_countdown_value;
+            else numElem.innerText = "GO!";
+            numElem.style.transform = "scale(1.15)";
+            setTimeout(() => numElem.style.transform = "scale(1)", 160);
+          } else {
+            overlay.style.display = "none";
+          }
+
+          // debug
+          document.getElementById("sensor_v").innerText =
+            (data.sensor_v ?? 0).toFixed(3);
+          document.getElementById("thr").innerText =
+            `${(data.goal_entry_v ?? 0).toFixed(2)} / ${(data.goal_release_v ?? 0).toFixed(2)} V`;
+          document.getElementById("holdoff").innerText =
+            `${data.goal_holdoff_ms ?? 0}ms`;
+          document.getElementById("minw").innerText =
+            `${(data.goal_min_width_ms ?? 0).toFixed(1)}ms`;
+          document.getElementById("eff").innerText =
+            `${Math.round(data.sensor_eff_rate_hz ?? 0)}Hz`;
+          document.getElementById("last_event").innerText =
+            data.last_event_ts
+              ? `${data.last_event_ts} | peak ${(data.last_event_peak_v ?? 0).toFixed(3)}V | w ${(data.last_event_width_ms ?? 0).toFixed(1)}ms`
+              : "-";
+        })
+        .catch(() => {});
+    }
+
+    setInterval(updateStatus, 800);
+    window.addEventListener("load", updateStatus);
+
+    function startRound() { fetch(q("/start")).then(()=>updateStatus()); }
+    function stopRound()  { fetch(q("/stop")).then(()=>updateStatus()); }
+
+    function setSound(mode) {
+      suppressSyncUntil = Date.now() + 1200;
+      fetch(q("/sound/" + mode)).then(()=>updateStatus());
+    }
+
+    function muteOn()  { fetch(q("/mute")).then(()=>updateStatus()); }
+    function muteOff() { fetch(q("/unmute")).then(()=>updateStatus()); }
+
+    function applyGameTime() {
+      const v = document.getElementById("game_time_input").value;
+      const s = parseInt(v, 10);
+      if (isNaN(s)) return;
+      suppressSyncUntil = Date.now() + 1200;
+      fetch(q("/set_time?seconds=" + s)).then(()=>updateStatus());
+    }
+
+    function applyModes() {
+      const g1 = parseInt(document.getElementById("game1_mode_select").value, 10);
+      const g2 = parseInt(document.getElementById("game2_mode_select").value, 10);
+      if (![1,2,3].includes(g1) || ![1,2,3].includes(g2)) return;
+      suppressSyncUntil = Date.now() + 1200;
+      fetch(q(`/set_modes?game1=${g1}&game2=${g2}`)).then(()=>updateStatus());
+    }
+  </script>
+</head>
+
+<body>
+  <h1>🏀 投籃機控制台 - Dashboard</h1>
+
+  <div id="pre_countdown_overlay">
+    <div id="pre_countdown_number">3</div>
+  </div>
+
+  <div class="grid">
+    <!-- 左：狀態/得分 -->
+    <div class="card">
+      <div class="row"><span>狀態</span><span id="state" class="badge">STOPPED</span></div>
+      <div class="row"><span>Round</span><span class="badge" id="round">0</span></div>
+      <div class="row"><span>Game</span><span class="badge" id="game">0</span></div>
+
+      <div class="row"><span>本場得分</span><span class="badge" id="score">0</span></div>
+      <div class="row"><span>本輪總得分</span><span class="badge" id="round_total">0</span></div>
+
+      <div class="sub">本場剩餘時間</div>
+      <div class="big" id="countdown">0</div>
+
+      <div style="margin-top:10px;">
+        <button class="btn btn-green" onclick="startRound()">Start Round</button>
+        <button class="btn btn-red" onclick="stopRound()">Stop</button>
+      </div>
+    </div>
+
+    <!-- 右：音效/模式/秒數 -->
+    <div class="card">
+      <div class="row"><span>音效模式</span><span class="badge" id="sound_mode">BEEP</span></div>
+      <div class="row"><span>靜音</span><span class="badge" id="mute_state">OFF</span></div>
+      <div class="row"><span>每場秒數</span><span class="badge"><span id="game_time">30</span>s</span></div>
+
+      <div style="margin-top:10px;">
+        <button class="btn" onclick="setSound('beep')">嗶嗶</button>
+        <button class="btn" onclick="setSound('cheer')">歡呼</button>
+      </div>
+
+      <div style="margin-top:10px;">
+        <button class="btn btn-yellow" onclick="muteOn()">靜音</button>
+        <button class="btn btn-yellow" onclick="muteOff()">取消靜音</button>
+      </div>
+
+      <div style="margin-top:12px;" class="row">
+        <span>下一輪秒數</span>
+        <span>
+          <input type="number" id="game_time_input" min="3" max="3600" value="30" />
+          <button class="btn" onclick="applyGameTime()">套用</button>
+        </span>
+      </div>
+
+      <div class="row">
+        <span>Game1 模式</span>
+        <select id="game1_mode_select" onchange="applyModes()">
+          <option value="1">Mode1(固定90)</option>
+          <option value="2">Mode2(45↔135)</option>
+          <option value="3">Mode3(30↔150亂速)</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <span>Game2 模式</span>
+        <select id="game2_mode_select" onchange="applyModes()">
+          <option value="1">Mode1(固定90)</option>
+          <option value="2">Mode2(45↔135)</option>
+          <option value="3">Mode3(30↔150亂速)</option>
+        </select>
+      </div>
+
+      <div class="hint" id="mode_preview">下一輪：-</div>
+      <div class="hint" id="settings_hint">-</div>
+
+      <hr style="border:none; border-top:1px solid rgba(255,255,255,0.08); margin:12px 0;">
+
+      <!-- 感測器除錯 -->
+      <div class="row"><span>sensor_v</span><span class="badge"><span id="sensor_v">0.000</span> V</span></div>
+      <div class="row"><span>entry/release</span><span class="badge" id="thr">2.00 / 1.70 V</span></div>
+      <div class="row"><span>holdoff</span><span class="badge" id="holdoff">250ms</span></div>
+      <div class="row"><span>min width</span><span class="badge" id="minw">5.0ms</span></div>
+      <div class="row"><span>eff rate</span><span class="badge" id="eff">0Hz</span></div>
+      <div class="hint">Last EVENT: <span id="last_event">-</span></div>
+    </div>
+  </div>
+
+  <!-- 下：歷史 -->
+  <div class="card history-card">
+    <div class="best">🏆 歷史最佳分數：<span id="best_score">0</span></div>
+    <div style="font-weight:700; color:#00eaff; margin-bottom:10px;">📘 最近十次 Round</div>
+    <div id="recent_list" class="history-list">
+      <div class="history-item">目前無紀錄</div>
+    </div>
+  </div>
+
+</body>
+</html>
