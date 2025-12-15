@@ -80,6 +80,7 @@ Raspberry Pi 版操作與組裝 SOP（Markdown）
 ### 3.2 MCP3008 + GP2Y0A51SK0F 距離感測器
 
 **GP2Y0A51SK0F**
+<img width="600" height="429" alt="image" src="https://github.com/user-attachments/assets/effd1c77-b1c0-40dd-85ee-0879a1b238dd" />
 
 | 腳位 | 接到         |
 |------|--------------|
@@ -88,6 +89,7 @@ Raspberry Pi 版操作與組裝 SOP（Markdown）
 | Vo   | MCP3008 CH0  |
 
 **MCP3008 腳位**
+<img width="216" height="163" alt="image" src="https://github.com/user-attachments/assets/a4ec5d31-97f0-497d-87b7-b462fba39524" />
 
 | MCP3008 腳位 | 功能   | 接到                       |
 |--------------|--------|----------------------------|
@@ -148,6 +150,10 @@ LCD 背板 4 Pin：
 - GPIO 17 在程式內設為 **pull-up**：
   - 放開：讀值 HIGH
   - 按下：接 GND → 讀值 LOW
+![S__17793052_0](https://github.com/user-attachments/assets/070c9492-8d59-4d58-a5cd-5ecd91d7bd2d)
+![S__17793053_0](https://github.com/user-attachments/assets/ffdc2f28-8cf1-4b34-86e5-de03544ab5da)
+![S__17793048_0](https://github.com/user-attachments/assets/34212eaa-fd35-403d-bf15-ef229bdb0195)
+
 
 ---
 
