@@ -2,6 +2,7 @@
 Raspberry Pi 版操作與組裝 SOP（Markdown）
 ---
 影片：https://youtube.com/shorts/cjnFgCmjGvc?feature=share
+
 ![S__17793064_0](https://github.com/user-attachments/assets/ef8e1a1a-38a1-45e2-8934-6938c7c43f4f)
 
 ## 一、系統目標與整體說明
