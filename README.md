@@ -251,9 +251,10 @@ LCD 背板 4 Pin：
    - LCD 只用單行顯示：3 → 2 → 1 → GO!
    - 蜂鳴器：
      - 3、2、1：短嗶。
+![S__17793074_0](https://github.com/user-attachments/assets/65fcaf60-a7f6-4061-a2f2-6c42226da4da)
      - GO!：長嗶。
 ![S__17793070_0](https://github.com/user-attachments/assets/e37ece86-c04e-4b8f-9f2b-9d2cf2435f18)
-![S__17793074_0](https://github.com/user-attachments/assets/65fcaf60-a7f6-4061-a2f2-6c42226da4da)
+
 
 2. **Playing 階段**
    - 持續時間：預設 30 秒（可由 Web 調整）。
@@ -340,8 +341,8 @@ LCD 背板 4 Pin：
 - 最近 10 個 Round 的紀錄與歷史最高分（由 `score_history.json` 讀取）
 ![S__17793071_0](https://github.com/user-attachments/assets/01a5c0a3-bf55-41b3-8f68-7ce072af3d92)
 ![S__17793058_0](https://github.com/user-attachments/assets/bb39d47c-45ad-454d-a459-64a5e2c9a390)
-![S__17793060_0](https://github.com/user-attachments/assets/bb50b5e8-70f2-4307-a515-5aa251d029ff)
-![S__17793059_0](https://github.com/user-attachments/assets/493fffae-63cc-4911-97b2-ffa9870236bb)
+![S__17793060_0](https://github.com/user-attachments/assets/21c52b40-0e69-40ff-ac11-10a03e084d60)
+![S__17793059_0](https://github.com/user-attachments/assets/3199491a-decc-4ede-a24e-da5a8a670951)
 
 ### 8.2 控制項
 
