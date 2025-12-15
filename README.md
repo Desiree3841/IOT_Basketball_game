@@ -292,6 +292,8 @@ LCD 背板 4 Pin：
 ---
 
 ## 七、LCD 顯示規格（20×4）
+![S__17793082_0](https://github.com/user-attachments/assets/e62a1497-3e7e-4795-adc0-9e9c37530284)
+
 
 ### 7.1 倒數畫面（Game 前）
 
@@ -340,9 +342,7 @@ LCD 背板 4 Pin：
 - 每場秒數（GAME_TIME）
 - 最近 10 個 Round 的紀錄與歷史最高分（由 `score_history.json` 讀取）
 ![S__17793071_0](https://github.com/user-attachments/assets/01a5c0a3-bf55-41b3-8f68-7ce072af3d92)
-![S__17793058_0](https://github.com/user-attachments/assets/bb39d47c-45ad-454d-a459-64a5e2c9a390)
-![S__17793060_0](https://github.com/user-attachments/assets/21c52b40-0e69-40ff-ac11-10a03e084d60)
-![S__17793059_0](https://github.com/user-attachments/assets/3199491a-decc-4ede-a24e-da5a8a670951)
+![S__17793058_0](https://github.com/user-attachments/assets/bfe81f88-da82-42e0-a75c-a088b79a91b5)
 
 ### 8.2 控制項
 
