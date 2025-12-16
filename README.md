@@ -156,6 +156,8 @@ LCD 背板 4 Pin：
 - GPIO 17 在程式內設為 **pull-up**：
   - 放開：讀值 HIGH
   - 按下：接 GND → 讀值 LOW
+ 
+### 3.7 接線圖
 <img width="490" height="432" alt="image" src="https://github.com/user-attachments/assets/2b27c67a-04b1-4aa3-b5ab-3ea59572c5f4" />
 
 ![S__17793052_0](https://github.com/user-attachments/assets/070c9492-8d59-4d58-a5cd-5ecd91d7bd2d)
@@ -166,6 +168,38 @@ LCD 背板 4 Pin：
 ---
 
 ## 四、程式架構
+
+### 4.0 執行環境、介面啟用與套件安裝
+
+> 目的：確保 GPIO / SPI（MCP3008）/ I2C（LCD）都可用，避免「程式正常但硬體不動」的踩雷。
+
+#### 4.0.1 介面啟用（必做）
+1. 執行 `sudo raspi-config` → **Interface Options**
+   - **SPI**：Enable  
+   - **I2C**：Enable
+2. 重新開機：`sudo reboot`
+
+#### 4.0.2 系統套件（建議用 apt，較穩定）
+```bash
+sudo apt update
+sudo apt install -y python3-pip python3-flask python3-rpi.gpio python3-spidev i2c-tools python3-smbus
+```
+
+#### 4.0.3 Python 套件（若你用 pip / venv）
+```bash
+pip3 install flask
+```
+
+#### 4.0.4 LCD 驅動檔
+本專案使用 `I2C_LCD_driver.py`（常見的 20×4 I2C LCD 驅動腳本）：
+- 請將 `I2C_LCD_driver.py` 放在專案根目錄（與 `app.py` 同層），或放到 Python 可 `import` 的路徑。
+- 若 LCD 無法顯示，先用 `i2cdetect -y 1` 確認 I2C 位址有掃到（常見 0x27 / 0x3F）。
+
+#### 4.0.5 執行權限
+GPIO / SPI 在多數環境下需要 root 權限，建議用：
+```bash
+sudo python3 app.py
+```
 
 ### 4.1 檔案結構
 
