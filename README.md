@@ -179,20 +179,20 @@ LCD 背板 4 Pin：
    - **I2C**：Enable
 2. 重新開機：`sudo reboot`
 
-#### 4.0.2 系統套件（建議用 apt，較穩定）
+#### 4.0.2 系統套件
 ```bash
 sudo apt update
 sudo apt install -y python3-pip python3-flask python3-rpi.gpio python3-spidev i2c-tools python3-smbus
 ```
 
-#### 4.0.3 Python 套件（若你用 pip / venv）
+#### 4.0.3 Python 套件
 ```bash
 pip3 install flask
 ```
 
 #### 4.0.4 LCD 驅動檔
 本專案使用 `I2C_LCD_driver.py`（常見的 20×4 I2C LCD 驅動腳本）：
-- 請將 `I2C_LCD_driver.py` 放在專案根目錄（與 `app.py` 同層），或放到 Python 可 `import` 的路徑。
+- 將 `I2C_LCD_driver.py` 放在專案根目錄（與 `app.py` 同層），或放到 Python 可 `import` 的路徑。
 - 若 LCD 無法顯示，先用 `i2cdetect -y 1` 確認 I2C 位址有掃到（常見 0x27 / 0x3F）。
 
 #### 4.0.5 執行權限
